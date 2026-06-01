@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
+// Make sure the URL includes /api/v1
+const API_URL = 'https://task-manager-app-yf94.onrender.com/api/v1';
 
 const api = axios.create({
   baseURL: API_URL,
@@ -19,15 +20,6 @@ api.interceptors.request.use(
     return config;
   },
   (error) => Promise.reject(error)
-);
-
-// Handle responses
-api.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    console.error('API Error:', error.response?.data);
-    return Promise.reject(error);
-  }
 );
 
 export default api;
