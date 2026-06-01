@@ -43,17 +43,26 @@ npm install
 npm run dev
 
 
-API Endpoints
-POST /api/v1/auth/register - Register user
+## API Documentation
 
-POST /api/v1/auth/login - Login user
+Postman collection included: `Task_Manager_API.postman_collection.json`
 
-GET /api/v1/auth/me - Get current user
+### How to use Postman Collection
 
-POST /api/v1/tasks - Create task
+1. Import `Task_Manager_API.postman_collection.json` into Postman
+2. Set environment variable `base_url` = `http://localhost:3000/api/v1`
+3. Run "Login - Get Token" to authenticate
+4. Token auto-saves and works for all protected routes
 
-GET /api/v1/tasks - Get all tasks
+### API Endpoints Tested
 
-PUT /api/v1/tasks/:id - Update task
-
-DELETE /api/v1/tasks/:id - Delete task
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | /api/v1/auth/register | Register new user |
+| POST | /api/v1/auth/login | Login & get token |
+| GET | /api/v1/auth/me | Get current user |
+| POST | /api/v1/tasks | Create task |
+| GET | /api/v1/tasks | Get all tasks |
+| GET | /api/v1/tasks/:id | Get single task |
+| PUT | /api/v1/tasks/:id | Update task |
+| DELETE | /api/v1/tasks/:id | Delete task |
